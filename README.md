@@ -24,7 +24,7 @@ Create a Node.js HTTP server using the built-in **http module** without Express.
 ## ▶️ How to Run
 
 ```bash
-node app.js
+node server.js
 ```
 
 Open in browser:
