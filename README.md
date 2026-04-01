@@ -30,7 +30,7 @@ node server.js
 Open in browser:
 
 ```
-http://localhost:8008
+http://localhost:8023
 ```
 
 ## 📊 Status Codes
