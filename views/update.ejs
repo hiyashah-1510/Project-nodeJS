@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Update Task</h2>
+
+        <form action="/edit/<%= task.id %>" method="POST">
+
+            <label>Task</label>
+            <input type="text" name="task" value="<%= task.task %>" required>
+
+            <label>Description</label>
+            <input type="text" name="description" value="<%= task.description %>" required>
+
+            <label>Status</label>
+            <select name="status">
+                <option value="Pending" <%=task.status==="Pending" ? "selected" : "" %>>
+                    Pending
+                </option>
+                <option value="In Progress" <%=task.status==="In Progress" ? "selected" : "" %>>
+                    In Progress
+                </option>
+                <option value="Completed" <%=task.status==="Completed" ? "selected" : "" %>>
+                    Completed
+                </option>
+            </select>
+
+            <label>Category</label>
+            <input type="text" name="category" value="<%= task.category %>">
+
+            <button type="submit">Update Task</button>
+
+        </form>
+
+        <a href="/">Back to Home</a>
+
+    </div>
+
+</body>
+
+</html>
