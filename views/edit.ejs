@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<header>
+    <h1>Edit Book</h1>
+    <a href="/">Back</a>
+</header>
+
+<form action="/update/<%= book._id %>" method="POST" enctype="multipart/form-data">
+
+    <input type="text" name="title" value="<%= book.title %>">
+    <input type="text" name="author" value="<%= book.author %>">
+    <input type="text" name="category" value="<%= book.category %>">
+    <input type="number" name="price" value="<%= book.price %>">
+    <input type="number" name="quantity" value="<%= book.quantity %>">
+
+    <textarea name="description"><%= book.description %></textarea>
+
+    <img src="/uploads/<%= book.image %>" width="100">
+
+    <input type="file" name="image">
+
+    <button>Update</button>
+
+</form>
