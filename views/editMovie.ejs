@@ -1,0 +1,64 @@
+<%- include('header') %>
+
+<section class="form-section">
+  <div class="add-movie-container">
+    <h2>Edit Movie</h2>
+
+    <form action="/update/<%= movie._id %>" method="POST" enctype="multipart/form-data" class="movie-form">
+
+      <div class="form-grid">
+
+        <div class="form-group full-width">
+          <label>Movie Title</label>
+          <input type="text" name="name" value="<%= movie.name %>" required>
+        </div>
+
+        <div class="form-group">
+          <label>Actors</label>
+          <input type="text" name="actors" value="<%= movie.actors %>">
+        </div>
+
+        <div class="form-group">
+          <label>Directors</label>
+          <input type="text" name="directors" value="<%= movie.directors %>">
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description</label>
+          <textarea name="desc" rows="3"><%= movie.desc %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" name="category" value="<%= movie.category %>">
+        </div>
+
+        <div class="form-group">
+          <label>Rating</label>
+          <input type="number" step="0.1" name="rating" value="<%= movie.rating %>">
+        </div>
+
+        <div class="form-group">
+          <label>Year</label>
+          <input type="text" name="year" value="<%= movie.year %>">
+        </div>
+
+        <div class="form-group">
+          <label>Upload New Poster</label>
+          <input type="file" name="image">
+        </div>
+
+        <div class="form-group full-width poster-box">
+          <label>Current Poster</label>
+          <img src="<%= movie.image %>" alt="movie">
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn-submit">Update Movie</button>
+
+    </form>
+  </div>
+</section>
+
+<%- include('footer') %>

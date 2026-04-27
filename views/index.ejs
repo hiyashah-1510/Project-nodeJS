@@ -1,0 +1,36 @@
+<%- include('header') %>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Unlimited Movies</h1>
+    <h2>Manage your movie collection like Netflix</h2>
+    <p>Add, explore and edit your favorite movies</p>
+
+    <a href="/add" class="btn-hero">Add Movie</a>
+  </div>
+</section>
+
+<section class="row-section">
+  <h2>Trending Now</h2>
+
+  <div class="movie-row">
+    <% movies.forEach(movie => { %>
+
+      <a href="/movies/<%= movie._id %>" class="row-card">
+        <img src="<%= movie.image %>" alt="movie">
+
+        <div class="overlay">
+          <h3><%= movie.name %></h3>
+          <span><%= movie.rating %></span>
+        </div>
+      </a>
+
+    <% }) %>
+  </div>
+</section>
+
+</main>
+
+<%- include('footer') %>

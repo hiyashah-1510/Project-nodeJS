@@ -1,0 +1,43 @@
+<%- include('header') %>
+
+<main>
+
+<section class="single-page">
+
+  <div class="single-container">
+
+    <div class="poster-box">
+      <img src="<%= movie.image %>" alt="movie">
+    </div>
+
+    <div class="content-box">
+      <h1><%= movie.name %></h1>
+
+      <div class="meta">
+ 
+        <span><%= movie.year %></span>
+        <span><%= movie.category %></span>
+      </div>
+
+      <p class="desc"><%= movie.desc %></p>
+
+      <div class="info">
+        <p><strong>Rating: </strong><%= movie.rating %></p>
+        <p><strong>Actors: </strong> <%= movie.actors %></p>
+        <p><strong>Director: </strong> <%= movie.directors %></p>
+        <p><strong>Language: </strong> <%= movie.languages %></p>
+      </div>
+
+      <div class="actions">
+        <a href="#" class="btn-primary">Watch</a>
+        <a href="/edit/<%= movie._id %>" class="btn-outline">Edit</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<%- include('footer') %>
